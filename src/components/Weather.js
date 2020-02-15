@@ -1,5 +1,5 @@
 import React from 'react'
-import {getCelcius} from '../utils'
+import { getCelcius } from '../utils'
 
 export default function Weather(props) {
     return (
