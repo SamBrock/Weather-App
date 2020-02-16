@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import AutosizeInput from 'react-input-autosize'
+
 /* global google */
 
 export default class Search extends Component {
@@ -48,16 +50,29 @@ export default class Search extends Component {
 			<header>
 				<h1 className="search-heading">Right now in</h1>
 				<div className="search-input-container">
-					<input className="autocomplete-input" type="text"
+					{/* <input className="autocomplete-input" type="text"
 						value={this.state.predictions[0].mainTxt}
 						style={{ width: `${this.state.predictions[0].mainTxt.length}ch` }}>
-					</input>
-					<input className="search-input" type="text" placeholder="Enter a place..." name="query"
+					</input> */}
+					{/* <input className="search-input" type="text" placeholder="Enter a place..." name="query"
 						value={this.state.value}
 						onChange={(e) => this.handleInputChange(e)}
 						onKeyUp={(e) => this.handleInputSelect(e)}
 						style={{ width: `${this.state.predictions[0].mainTxt.length}ch` }}>
-					</input>
+					</input> */}
+					<AutosizeInput
+						name="autocomplete-input"
+						className="autocomplete-input"
+						style={{color: '#999999'}}
+						value={this.state.predictions[0].mainTxt}
+					/>
+					<AutosizeInput
+						name="search-input"
+						className="search-input"
+						value={this.state.value}
+						onChange={(e) => this.handleInputChange(e)} 
+						onKeyUp={(e) => this.handleInputSelect(e)}
+					></AutosizeInput>
 				</div>
 				<span className="secondary-txt">{this.state.predictions[0].secondaryTxt}</span>
 				<h1>, it's cloudy</h1>

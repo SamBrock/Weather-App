@@ -16,21 +16,28 @@ header {
             @include heading;
             border: none;
             margin: 0 12px;
-            transition: .2s ease-in-out all;
-        }
-
-        & .autocomplete-input {
-            position: absolute;
-            color: #999999;
         }
 
         & .search-input {
+            position: absolute;
+            outline: none;
+
+            & input {
+                background: transparent;
+            }
+
+            & input:focus {
+                outline: none;
+            }
+        }
+
+        & .autocomplete-input input {
             position: relative;
-            background: transparent;
-            // border-bottom: 1px #222 solid;
+            color: #999999;
         }
     }
-    .secondary-txt{
+
+    .secondary-txt {
         // border: 1px red solid;
         align-self: baseline;
     }
