@@ -1,0 +1,32 @@
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, auto);
+
+    header {
+        grid-column: 1 / span 3;
+        grid-row: 1;
+    }
+
+    .weather-icon {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .weather-temperature {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    .weather-details {
+        grid-column: 3;
+        grid-row: 2;
+    }
+
+    .weather-forecast {
+        grid-column: 1 / span 3;
+        grid-row: 3;
+    }
+}

@@ -1,0 +1,9 @@
+.weather-icon, .weather-temperature{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.weather-temperature{
+    font-size: 10em;
+}

@@ -3,7 +3,7 @@ import { getCelcius, getDayName, getTime } from '../utils'
 
 export default function Forecast(props) {
 	return (
-		<div>
+		<div className="weather-forecast">
 			<h3>Forecast</h3>
 			<table>
 				{props.forecast.map((day, index) => {

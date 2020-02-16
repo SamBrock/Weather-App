@@ -1,11 +1,19 @@
 import React from 'react'
 import { getCelcius } from '../utils'
+import Sunny from '../img/sunny.svg'
 
 export default function Weather(props) {
 	return (
-		<div>
-			Temperature: {getCelcius(props.weather.main.temp)}<br />
-			{props.weather.weather[0].main}
-		</div>
+		<React.Fragment>
+			<div className="weather-icon">
+				<img src={Sunny} height="160px"></img>
+			</div>
+			<div className="weather-temperature">
+				{getCelcius(props.weather.main.temp)}
+			</div>
+			<div className="weather-details">
+
+			</div>
+		</React.Fragment>
 	)
 }

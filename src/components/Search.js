@@ -3,8 +3,11 @@ import React, { Component } from 'react'
 
 export default class Search extends Component {
 	state = {
-		value: '',
-		predictions: {}
+		value: 'London',
+		predictions: [{
+			mainTxt: 'London',
+			secondaryTxt: 'UK'
+		}]
 	}
 
 	handleInputChange = (e) => {
@@ -15,8 +18,8 @@ export default class Search extends Component {
 
 	handleInputSelect = (e) => {
 		if (e.keyCode === 13) {
-			this.props.search(this.state.predictions[0].description)
-			this.setState({ value: this.state.predictions[0].description })
+			this.props.search(this.state.predictions[0].mainTxt)
+			this.setState({ value: this.state.predictions[0].mainTxt })
 		}
 	}
 
@@ -29,18 +32,36 @@ export default class Search extends Component {
 		};
 
 		service.getPlacePredictions(request, (predictions) => {
-			this.setState({ predictions: predictions })
+			this.setState({
+				predictions: predictions.map(prediction => ({
+					mainTxt: prediction.structured_formatting.main_text,
+					secondaryTxt: prediction.structured_formatting.secondary_text
+				}))
+			})
 		})
 	};
 
 	render() {
+		//const {main_text, secondary_text} = this.state.predictions[0].structured_formatting
+
 		return (
-			<React.Fragment>
-				<div className="search-div">
-					<input type="text" id="background-input" value={this.state.predictions.length > 0 ? this.state.predictions[0].description : ''}></input>
-					<input id="search" value={this.state.value} type="text" placeholder="Enter a place..." name="query" onChange={(e) => this.handleInputChange(e)} onKeyUp={(e) => this.handleInputSelect(e)}></input>
+			<header>
+				<h1 className="search-heading">Right now in</h1>
+				<div className="search-input-container">
+					<input className="autocomplete-input" type="text"
+						value={this.state.predictions[0].mainTxt}
+						style={{ width: `${this.state.predictions[0].mainTxt.length}ch` }}>
+					</input>
+					<input className="search-input" type="text" placeholder="Enter a place..." name="query"
+						value={this.state.value}
+						onChange={(e) => this.handleInputChange(e)}
+						onKeyUp={(e) => this.handleInputSelect(e)}
+						style={{ width: `${this.state.predictions[0].mainTxt.length}ch` }}>
+					</input>
 				</div>
-			</React.Fragment>
+				<span className="secondary-txt">{this.state.predictions[0].secondaryTxt}</span>
+				<h1>, it's cloudy</h1>
+			</header>
 		)
 	}
 }

@@ -32,6 +32,7 @@
     ]
   },
   "devDependencies": {
+    "node-sass": "^4.13.1",
     "react-places-autocomplete": "^7.2.1"
   }
 }

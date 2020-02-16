@@ -1,0 +1,38 @@
+header {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    margin: 50px 0;
+
+    .search-heading {
+        @include heading;
+    }
+
+    .search-input-container {
+        position: relative;
+        display: flex;
+
+        & input {
+            @include heading;
+            border: none;
+            margin: 0 12px;
+            transition: .2s ease-in-out all;
+        }
+
+        & .autocomplete-input {
+            position: absolute;
+            color: #999999;
+        }
+
+        & .search-input {
+            position: relative;
+            background: transparent;
+            // border-bottom: 1px #222 solid;
+        }
+    }
+    .secondary-txt{
+        // border: 1px red solid;
+        align-self: baseline;
+    }
+
+}
