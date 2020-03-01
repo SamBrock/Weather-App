@@ -1,21 +1,24 @@
 import React from 'react'
-import { getCelcius, getDayName, getTime } from '../utils'
+import { getCelsius, getFahrenheit } from '../utils'
 
 export default function Forecast(props) {
+	let convert;
+	if (props.scale === 'c') {
+		convert = getCelsius;
+	} else if (props.scale === 'f') {
+		convert = getFahrenheit;
+	}
 	return (
 		<div className="weather-forecast">
-			<h3>Forecast</h3>
-			<table>
-				{props.forecast.map((day, index) => {
-					return (
-						getTime(day.dt) === 12 &&
-						<tr key={index}>
-							<td>{getDayName(day.dt)}</td>
-							<td>{getTime(day.dt)}</td>
-						</tr>
-					)
-				})}
-			</table>
+			{props.forecast.map(weather => {
+				return (
+					<div className="weather-forecast-day">
+						<img />
+						<span>{`${convert(weather.max)} / ${convert(weather.min)}`}</span>
+						<span>{weather.date}</span>
+					</div>
+				)
+			})}
 		</div>
 	)
 }
