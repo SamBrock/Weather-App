@@ -65,7 +65,7 @@ export default class Search extends Component {
 					/>
 				</div>
 				<span className="secondary-txt">{this.state.predictions[0].secondaryTxt}</span>
-				<h1>, it's cloudy</h1>
+				<h1>, {this.props.weatherDesc}</h1>
 			</header>
 		)
 	}

@@ -12,10 +12,10 @@ export default function Forecast(props) {
 		<div className="weather-forecast">
 			{props.forecast.map(weather => {
 				return (
-					<div className="weather-forecast-day">
+					<div className="forecast-details">
 						<img />
-						<span>{`${convert(weather.max)} / ${convert(weather.min)}`}</span>
-						<span>{weather.date}</span>
+						<div className="forecast-temp">{`${convert(weather.max)} / ${convert(weather.min)}`}</div>
+						<div className="forecast-day">{weather.date}</div>
 					</div>
 				)
 			})}

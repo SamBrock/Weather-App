@@ -19,7 +19,9 @@ export default function Weather(props) {
 				{convert(props.temps.temp)}
 			</div>
 			<div className="weather-details">
-
+				<span>clouds: {props.weather.clouds.all}</span><br />
+				<span>wind speed: {props.weather.wind.speed}</span><br />
+				<span>rain: {props.weather.rain}</span>
 			</div>
 		</React.Fragment>
 	)

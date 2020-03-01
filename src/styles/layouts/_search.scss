@@ -43,3 +43,22 @@ header {
     }
 
 }
+
+.set-scale-btns{
+    position: absolute;
+    bottom: 48px;
+    left: 50%;
+    font-size: 1.5em;
+    .set-scale-btn{
+        border: none;
+        background: none;
+        cursor: pointer;
+        font-size: 1.5em;
+
+
+
+        &.set-celsius{
+           
+        }
+    }
+}

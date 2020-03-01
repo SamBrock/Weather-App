@@ -1,5 +1,18 @@
-.weather-forecast{
-    border: 1px red solid;
+.weather-forecast {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+
+    .forecast-details {
+        // border: 1px red solid;
+        text-align: center;
+
+        .forecast-temp {
+            font-size: 2em;
+            margin: 12 0 0 0;
+        }
+
+        .forecast-day {
+            margin: 12 0 12 0;
+        }
+    }
 }

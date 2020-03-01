@@ -45,6 +45,20 @@ export function getForecast(arr) {
         .reverse()
 }
 
+export function getRain(input) {
+    console.log(input);
+    if(input){
+        if(input['1h']){
+            return input['1h'];
+        }
+        if(input['3h']){
+            return input['3h'];
+        }
+    } else {
+        return '0';
+    }
+}
+
 export function getCelsius(input) {
     return Math.round(input - 273.15);
 }
