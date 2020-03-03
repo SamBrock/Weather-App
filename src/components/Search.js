@@ -45,6 +45,7 @@ export default class Search extends Component {
 		})
 	};
 
+	// Old search version
 	render() {
 		return (
 			<header>
