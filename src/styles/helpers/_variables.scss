@@ -1,10 +1,25 @@
 @import url('https://fonts.googleapis.com/css?family=Cabin&display=swap');
 
-$cabin: 'Cabin', arial, sans-serif;
+$cabin: 'Cabin',
+arial,
+sans-serif;
+
+$darkGray: #9c9c9c;
+$lightGray: #c4c4c4;
 
 @mixin heading {
-    margin: 0;
-    padding: 0;
-    font-weight: normal;
-    font-size: 2em;
-  }
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+  font-size: 2em;
+}
+
+@mixin body {
+  font-weight: normal;
+  font-size: 1.7em;
+  color: $darkGray;
+}
+
+@mixin padding {
+  padding: .4rem .6rem;
+}

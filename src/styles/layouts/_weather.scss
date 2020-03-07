@@ -1,9 +1,51 @@
-.weather-icon, .weather-temperature{
+.weather-icon,
+.weather-temperature,
+.weather-details {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.weather-temperature{
+.weather-temperature {
     font-size: 10em;
+}
+
+.weather-details {
+    flex-direction: column;
+
+    .weather-info {
+        @include padding;
+        @include body;
+        display: flex;
+        width: 100%;
+        max-width: 150px;
+        // grid-template-columns: 100px auto auto;
+
+        .weather-info-icon {
+            min-width: 55px;
+            min-height: 35px;
+            display: flex;
+            justify-content: center;
+            margin: 0 12px 0 0;
+            // border: 1px red solid;
+
+            &.clouds img {
+                height: 25px;
+            }
+
+            &.wind img {
+                height: 30px;
+            }
+
+            &.rain img {
+                height: 30px;
+            }
+        }
+
+        .weather-info-unit {
+            font-size: 0.6em;
+            align-self: flex-end;
+            margin: 0 0 6px 6px;
+        }
+    }
 }

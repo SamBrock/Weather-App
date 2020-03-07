@@ -3,12 +3,12 @@
     grid-template-columns: repeat(4, 1fr);
 
     .forecast-details {
-        // border: 1px red solid;
         text-align: center;
 
         .forecast-temp {
-            font-size: 2em;
             margin: 12 0 0 0;
+            @include body;
+            @include padding;
         }
 
         .forecast-day {

@@ -1,7 +1,7 @@
-header {
+.weather-search {
     display: flex;
     justify-content: center;
-    align-items: baseline;
+    align-items: center;
     margin: 50px 0;
 
     .search-heading {
@@ -9,56 +9,62 @@ header {
     }
 
     .search-input-container {
-        position: relative;
         display: flex;
+        align-items: baseline;
+        border-radius: 12px;
+        background: #fff;
+        margin: 0 12px;
+        @include padding;
 
-        & input {
-            @include heading;
-            border: none;
-            margin: 0 12px;
-        }
-
-        & .search-input {
-            position: absolute;
-            outline: none;
+        .search-inputs {
+            position: relative;
+            display: flex;
 
             & input {
-                background: transparent;
+                @include heading;
+                border: none;
+                margin: 0 12px;
+                cursor: pointer;
             }
 
-            & input:focus {
+            & .search-input {
+                position: absolute;
                 outline: none;
+
+                & input {
+                    background: transparent;
+                }
+
+                & input:focus {
+                    outline: none;
+                }
+            }
+
+            & .autocomplete-input input {
+                position: relative;
+                color: $darkGray;
             }
         }
 
-        & .autocomplete-input input {
-            position: relative;
-            color: #999999;
+        .secondary-txt {
+            // border: 1px red solid;
+            color: $darkGray;
         }
     }
-
-    .secondary-txt {
-        // border: 1px red solid;
-        align-self: baseline;
-    }
-
 }
 
-.set-scale-btns{
+.set-scale-btns {
     position: absolute;
     bottom: 48px;
     left: 50%;
     font-size: 1.5em;
-    .set-scale-btn{
+
+    .set-scale-btn {
         border: none;
         background: none;
         cursor: pointer;
         font-size: 1.5em;
 
-
-
-        &.set-celsius{
-           
-        }
+        &.set-celsius {}
     }
 }

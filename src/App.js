@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import { getRain, getForecast } from './utils'
+import { getRain, getForecast, getDesc } from './utils'
 
 import './styles/main.scss'
 
@@ -23,9 +23,9 @@ export default class App extends Component {
 		fetch(`https://api.openweathermap.org/data/2.5/weather?q=${value ? value : this.state.city}&appid=8058e5ea0ca0660b69cb3670e99aac53`)
 			.then(res => res.json())
 			.then(data => {
-				console.log(data);
+				console.log(data.weather[0]);
 				this.setState({
-					weather: { weatherDesc: data.weather[0], clouds: data.clouds, wind: data.wind, visibility: data.visibility, rain: getRain(data.rain)},
+					weather: { weatherDesc: getDesc(data.weather[0]), clouds: data.clouds, wind: data.wind, visibility: data.visibility, rain: getRain(data.rain)},
 					temps: { temp: data.main.temp, tempMin: data.main.temp_min, tempMax: data.main.temp_max },
 					times: { timezone: data.timezone, sunrise: data.sys.sunrise, sunset: data.sys.sunset },
 				})

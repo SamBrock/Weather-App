@@ -48,26 +48,28 @@ export default class Search extends Component {
 	// Old search version
 	render() {
 		return (
-			<header>
+			<div className="weather-search">
 				<h1 className="search-heading">Right now in</h1>
 				<div className="search-input-container">
-					<AutosizeInput
-						name="autocomplete-input"
-						className="autocomplete-input"
-						style={{ color: '#999999' }}
-						value={this.state.predictions[0].mainTxt}
-					/>
-					<AutosizeInput
-						name="search-input"
-						className="search-input"
-						value={this.state.userInput}
-						onChange={(e) => this.handleInputChange(e)}
-						onKeyUp={(e) => this.handleInputSelect(e)}
-					/>
+					<div className="search-inputs">
+						<AutosizeInput
+							name="autocomplete-input"
+							className="autocomplete-input"
+							style={{ color: '#999999' }}
+							value={this.state.predictions[0].mainTxt}
+						/>
+						<AutosizeInput
+							name="search-input"
+							className="search-input"
+							value={this.state.userInput}
+							onChange={(e) => this.handleInputChange(e)}
+							onKeyUp={(e) => this.handleInputSelect(e)}
+						/>
+					</div>
+					<span className="secondary-txt">{this.state.predictions[0].secondaryTxt}</span>
 				</div>
-				<span className="secondary-txt">{this.state.predictions[0].secondaryTxt}</span>
-				<h1>, {this.props.weatherDesc}</h1>
-			</header>
+				<h1>, it's {this.props.weatherDesc}</h1>
+			</div>
 		)
 	}
 }
