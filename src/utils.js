@@ -4,7 +4,7 @@ export function getForecast(arr) {
     const day1 = moment().format('YYYY-MM-DD');
     const day6 = moment().add(5, 'days').format('YYYY-MM-DD');
 
-    let min, max;
+    let min, max, weatherDesc;
     let date = false;
 
     return arr
@@ -35,6 +35,7 @@ export function getForecast(arr) {
             }
 
             return ({
+                weatherDesc: getDesc(data.weather.weatherDesc),
                 date: moment(data.date).format('ddd'),
                 min,
                 max
@@ -74,7 +75,7 @@ export function getDesc(obj) {
         if (id === 210 || id === 211 || id === 212 || id === 221) {
             return { id, main: obj.main, description: "thundering", icon: "11d" }
         }
-        return { id, main: obj.main, description: "stormy", icon: "11d" } //change icon
+        return { id, main: obj.main, description: "stormy", icon: "15d" }
     }
 
     // Drizzling

@@ -5,6 +5,12 @@
     .forecast-details {
         text-align: center;
 
+        .forecast-icon {
+            max-width: 50px;
+            max-height: 50px;
+            margin: 0 0 12px 0;
+        }
+
         .forecast-temp {
             margin: 12 0 0 0;
             @include body;
@@ -14,5 +20,6 @@
         .forecast-day {
             margin: 12 0 12 0;
         }
+
     }
 }
