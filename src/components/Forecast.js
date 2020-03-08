@@ -13,7 +13,7 @@ export default function Forecast(props) {
 			{props.forecast.map(weather => {
 				return (
 					<div className="forecast-details">
-						<img className="forecast-icon" src={require(`../img/icons/${weather.weatherDesc.icon}.png`)} alt={weather.weatherDesc.description}/>
+						<div className="forecast-icon"><img src={require(`../img/icons/${weather.weatherDesc.icon}.png`)} alt={weather.weatherDesc.description}/></div>
 						<div className="forecast-temp">{`${convert(weather.max)} / ${convert(weather.min)}`}</div>
 						<div className="forecast-day">{weather.date}</div>
 					</div>

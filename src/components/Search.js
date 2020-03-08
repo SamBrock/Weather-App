@@ -36,12 +36,15 @@ export default class Search extends Component {
 		};
 
 		service.getPlacePredictions(request, (predictions) => {
-			this.setState({
-				predictions: predictions.map(prediction => ({
-					mainTxt: prediction.structured_formatting.main_text,
-					secondaryTxt: prediction.structured_formatting.secondary_text
-				}))
-			})
+			if (predictions != null) {
+				this.setState({
+					predictions: predictions.map(prediction => ({
+						mainTxt: prediction.structured_formatting.main_text,
+						secondaryTxt: prediction.structured_formatting.secondary_text
+					}))
+				})
+			}
+
 		})
 	};
 

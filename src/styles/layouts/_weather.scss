@@ -28,6 +28,7 @@
             justify-content: center;
             margin: 0 12px 0 0;
             // border: 1px red solid;
+            user-select: none;
 
             &.clouds img {
                 height: 25px;

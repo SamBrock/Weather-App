@@ -4,8 +4,8 @@ $cabin: 'Cabin',
 arial,
 sans-serif;
 
-$darkGray: #9c9c9c;
-$lightGray: #c4c4c4;
+$darkGrey: #9c9c9c;
+$lightGrey: #c4c4c4;
 
 @mixin heading {
   margin: 0;
@@ -17,9 +17,15 @@ $lightGray: #c4c4c4;
 @mixin body {
   font-weight: normal;
   font-size: 1.7em;
-  color: $darkGray;
+  color: $darkGrey;
 }
 
 @mixin padding {
   padding: .4rem .6rem;
+}
+
+@mixin error {
+  font-size: 1.3em;
+  background: #bb0000 ;
+  color: #fff;
 }

@@ -114,6 +114,11 @@ export function getDesc(obj) {
 
     // Clouds
     if (id >= 801 && id <= 899) {
-        return { id, main: obj.main, description: "partly cloudy", icon: "02d" }
+        if (id === 801 || id === 802) {
+            return { id, main: obj.main, description: "partly cloudy", icon: "02d" }
+        }
+        if (id === 803 || id === 804) {
+            return { id, main: obj.main, description: "cloudy", icon: "02d" }
+        }
     }
 }
