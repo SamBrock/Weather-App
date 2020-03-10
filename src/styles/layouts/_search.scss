@@ -6,8 +6,9 @@
 
     @media screen and (max-width: $break-sm) {
         display: block;
-        margin: 0 12px;
+        margin: 28px auto;
         text-align: center;
+        max-width: 98%;
     }
 
     .search-heading {
@@ -21,11 +22,6 @@
         background: #fff;
         margin: 0 12px;
         @include padding;
-
-        @media screen and (max-width: $break-sm) {
-            width: 100%;
-            margin: 0 auto;
-        }
 
         .search-inputs {
             position: relative;
@@ -101,7 +97,8 @@
     }
 
     @media screen and (max-width: $break-sm) {
-        display: none;
+        position: static;
+        margin: 12px 0;
     }
 }
 
