@@ -47,7 +47,7 @@ export default class App extends Component {
 		fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${value ? value : this.state.city}&appid=8058e5ea0ca0660b69cb3670e99aac53`)
 			.then(res => {
 				if (!res.ok) {
-					throw Error('Netwokr request failed')
+					throw Error('Network request failed')
 				}
 
 				return res;
