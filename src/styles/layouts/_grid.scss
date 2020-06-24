@@ -3,7 +3,6 @@
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, auto);
 
     .weather-search {
         grid-column: 1 / span 3;
@@ -31,8 +30,34 @@
         margin: 92px 0 0 0;
     }
 
-    .search-error{
+    .search-error {
         grid-column: 1/ span 3;
         grid-row: 2;
+    }
+
+    @media screen and (max-width: $break-sm) {
+        .weather-icon {
+            grid-column: 1;
+            grid-row: 2;
+        }
+
+        .weather-temperature {
+            grid-column: 2 / span 2;
+            grid-row: 2;
+        }
+
+        .weather-details {
+            grid-column: 1 / span 3;
+            grid-row: 3;
+        }
+
+        .weather-forecast {
+            grid-row: 4;
+            margin: 0;
+        }
+
+        .set-scale-btns{
+            grid-column: 2;
+        }
     }
 }

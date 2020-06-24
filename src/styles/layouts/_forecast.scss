@@ -2,8 +2,16 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
 
+    @media screen and (max-width: $break-sm) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .forecast-details {
         text-align: center;
+
+        @media screen and (max-width: $break-sm) {
+            padding: 1rem 2rem;
+        }
 
         .forecast-icon {
             min-height: 85px;

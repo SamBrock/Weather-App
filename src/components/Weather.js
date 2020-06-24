@@ -5,7 +5,6 @@ import Wind from '../img/wind.svg'
 import Rain from '../img/water.svg'
 
 import Lottie from 'react-lottie'
-import animationdata from './animationdata.json'
 
 export default function Weather(props) {
 	let convert;
